@@ -17,6 +17,8 @@ export class DevOps extends React.Component<IDevOpsProps, IDevOpsState> {
     this._refresh1 = this._refresh1.bind(this);
     this._refresh2 = this._refresh2.bind(this);
     this._refresh3 = this._refresh3.bind(this);
+    this._refresh4 = this._refresh4.bind(this);
+    this._refresh5 = this._refresh5.bind(this);
   }
 
   public componentDidMount() {
@@ -36,6 +38,8 @@ export class DevOps extends React.Component<IDevOpsProps, IDevOpsState> {
               <button onClick={this._refresh1}>Try 1</button>
               <button onClick={this._refresh2}>Try 2</button>
               <button onClick={this._refresh3}>Try 3</button>
+              <button onClick={this._refresh4}>Try 4</button>
+              <button onClick={this._refresh5}>Try 5</button>
             </div>
           </div>
         </div>
@@ -53,6 +57,14 @@ export class DevOps extends React.Component<IDevOpsProps, IDevOpsState> {
 
   public _refresh3() {
     this.props.devOpsService.getProjects3();
+  }
+
+  public _refresh4() {
+    this.props.devOpsService.getProjects4();
+  }
+
+  public _refresh5() {
+    this.props.devOpsService.getProjects5();
   }
 
 }

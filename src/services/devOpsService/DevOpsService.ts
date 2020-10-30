@@ -81,5 +81,42 @@ export class DevOpsService implements IDevOpsService {
     });
   }
   
+  
+  public getProjects4() : void {  
+
+    
+    // Uncaught (in promise) Error: interaction_required: AADSTS65001: The user or administrator has not consented to use the application 
+    // with ID 'c91exxxx-xxxx-xxxx-xxxx-xxxxfbce5ba7' named 'sp-fx-dev-ops-client-side-solution'. Send an interactive authorization 
+    // request for this user and resource.
+    // at chunk.spoImplicit_none_592577b526a7e5da04e4.js:1
+
+    this._aadHttpClientFactory.getClient("c91exxxx-xxxx-xxxx-xxxx-xxxxfbce5ba7").then((client: AadHttpClient) => {      
+      client.get(`https://app.vssps.visualstudio.com/_apis/accounts`, AadHttpClient.configurations.v1).then((response: HttpClientResponse) => {
+        console.log(["Try4", response]);
+        return response.json();
+      })
+      .then((projects: any): void => {
+        console.log(["Try4", projects]);
+      });
+    });
+  }
+
+  public getProjects5() : void {  
+
+    // Uncaught (in promise) Error: interaction_required: AADSTS65001: The user or administrator has not consented to use the application 
+    // with ID 'c91exxxx-xxxx-xxxx-xxxx-xxxxfbce5ba7' named 'sp-fx-dev-ops-client-side-solution'. Send an interactive authorization 
+    // request for this user and resource.
+    // at chunk.spoImplicit_none_592577b526a7e5da04e4.js:1
+
+    this._aadHttpClientFactory.getClient("c91exxxx-xxxx-xxxx-xxxx-xxxxfbce5ba7").then((client: AadHttpClient) => {      
+      client.get(`https://dev.azure.com/spfxlab/_apis/projects?api-version=6.0`, AadHttpClient.configurations.v1).then((response: HttpClientResponse) => {
+        console.log(["Try5", response]);
+        return response.json();
+      })
+      .then((projects: any): void => {
+        console.log(["Try5", projects]);
+      });
+    });
+  }
 }
   
