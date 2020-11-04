@@ -1,6 +1,7 @@
 # sp-fx-dev-ops
 
 Issue with getting data from DevOps API from SharePoint WebPart
+https://github.com/SharePoint/sp-dev-docs/issues/6431
 
 
 ## Summary
