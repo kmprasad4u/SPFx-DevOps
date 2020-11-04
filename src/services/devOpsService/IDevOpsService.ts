@@ -4,4 +4,5 @@ export interface IDevOpsService {
     getProjects3() : void;
     getProjects4() : void;
     getProjects5() : void;
+    getProjects6() : void;
 }

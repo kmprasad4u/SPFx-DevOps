@@ -118,5 +118,19 @@ export class DevOpsService implements IDevOpsService {
       });
     });
   }
+
+  public getProjects6() : void {  
+
+    // 499b84ac-1321-427f-aa17-267ca6975798 - is Azue DevOps
+    this._aadHttpClientFactory.getClient("499b84ac-1321-427f-aa17-267ca6975798").then((client: AadHttpClient) => {      
+      client.get(`https://dev.azure.com/spfxlab/_apis/projects?api-version=6.0`, AadHttpClient.configurations.v1).then((response: HttpClientResponse) => {
+        console.log(["Try5", response]);
+        return response.json();
+      })
+      .then((projects: any): void => {
+        console.log(["Try5", projects]);
+      });
+    });
+  }
 }
   
